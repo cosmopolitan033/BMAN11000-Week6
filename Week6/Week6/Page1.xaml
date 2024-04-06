@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Week6.Page1" Title="Players">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text = "Number of players:" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Margin="20">
+
+            </Label>
+            <Picker Title="Select the number of players" HorizontalOptions="Center" x:Name="Picker1" SelectedIndexChanged="Picker1_SelectedIndexChanged">
+
+            </Picker>
+            <ListView x:Name="ListView2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <EntryCell Label="{Binding name}" Placeholder="{Binding description}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Clear" FontSize="Large" Margin="20" VerticalOptions="End" BackgroundColor="Orange" Clicked="Button_Clicked">
+
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

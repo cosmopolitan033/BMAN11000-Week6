@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Week6.MatchesPage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" x:Name="ScrollView1">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="10" Spacing="20">
+
+                <Label Text="Use steppers to set players' scores in the matches:" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start"/>
+                <StackLayout Spacing="20" x:Name="StackLayout1">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Player1}" VerticalOptions="Center" FontSize="Large" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding Player2}" VerticalOptions="Center" FontSize="Large" Grid.Row="1" Grid.Column="0"/>
+                                <Stepper Minimum="0" Maximum="99" Increment="1" x:Name="Stepper1" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" Value="{Binding Score1}"/>
+                                <Stepper Minimum="0" Maximum="99" Increment="1" x:Name="Stepper2" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Value="{Binding Score2}"/>
+                                <Label Text="{Binding Source={x:Reference Stepper1}, Path=Value}" HorizontalOptions="End" VerticalOptions="Center" FontSize="Large" Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding Source={x:Reference Stepper2}, Path=Value}" HorizontalOptions="End" VerticalOptions="Center" FontSize="Large" Grid.Row="1" Grid.Column="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
