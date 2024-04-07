@@ -41,8 +41,9 @@ namespace Week6
                 App.PlayerItem[i] = new PlayerItem();
                 App.PlayerItem[i].name = "Player " + Convert.ToString(i + 1);
                 App.PlayerItem[i].description = "Name of Player" + Convert.ToString(i + 1);
-                ListView2.ItemsSource = App.PlayerItem;
             }
+            ListView2.ItemsSource = App.PlayerItem;
+
         }
 
         private void Button_Clicked(object sender, EventArgs e)
